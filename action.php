@@ -52,31 +52,31 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col">
-                <form>
+                <form action="./inserimento.php">
                         <h5>Aggiungere un nuovo concerto:</h5>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">ID</label>
-                            <input type="text" class="form-control" name="" id="" aria-describedby="emailHelp">
+                            <label for="insertIdc" class="form-label">ID</label>
+                            <input type="text" class="form-control" name="insertIdc" id="insertIdc">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Titolo</label>
-                            <input type="text" class="form-control" name="" id="exampleInputPassword1">
+                            <label for="insertTitolo" class="form-label">Titolo</label>
+                            <input type="text" class="form-control" name="insertTitolo" id="insertTitolo">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Descrizione</label>
-                            <input type="text" class="form-control" name="" id="exampleInputPassword1">
+                            <label for="insertDesc" class="form-label">Descrizione</label>
+                            <input type="text" class="form-control" name="insertDesc" id="insertDesc">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Data</label>
-                            <input type="text" class="form-control" name="" id="exampleInputPassword1">
+                            <label for="insertGiorno" class="form-label">Data del concerto</label>
+                            <input type="date" class="form-control" name="insertGiorno" id="insertGiorno">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">ID sala</label>
-                            <input type="text" class="form-control" name="" id="exampleInputPassword1">
+                            <label for="insertIds" class="form-label">ID sala</label>
+                            <input type="text" class="form-control" name="insertIds" id="insertIds">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">ID Orchestra</label>
-                            <input type="text" class="form-control" name="" id="exampleInputPassword1">
+                            <label for="insertIdorchestra" class="form-label">ID Orchestra</label>
+                            <input type="text" class="form-control" name="insertIdorchestra" id="insertIdorchestra">
                         </div>
                         <button type="submit" class="btn btn-primary">Aggiungi</button>
                         </form>
