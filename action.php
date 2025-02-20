@@ -1,4 +1,5 @@
 <?php
+  //session_destroy();
     session_start();
     if (isset($_GET['emailUser']) && isset($_GET['passwd']) && isset($_GET['cognomeAdmin'])) {
         // Memorizza i dati della sessione solo se non esistono già
@@ -12,6 +13,7 @@
             $_SESSION['cognomeAdmin'] = $_GET['cognomeAdmin'];
         }
     }
+
 ?>
 <!doctype html>
   <head>
@@ -21,8 +23,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>   
-    <h1 class="text-danger text-center">Pagina Post Login</h1>
-    <div class="w-50 mx-auto my-auto text-center">
+        <div class="w-50 mx-auto my-auto text-center">
         <?php
             include("connessione.php");
             //var_dump($_GET['emailUser']);
@@ -38,17 +39,19 @@
             while($row = mysqli_fetch_assoc($query)){
                 //echo $row['Nome'];
                 if($row['Nome']==$userName && $row['ID_Direttore']==$idAdmin && $row['Cognome']==$cognomeAdmin){
-                    echo "<h5>Bentornato/a " . $row['Nome'] . "</h5>";
+                    echo "<br>";
+                    echo "<h6>Bentornato/a " . $row['Nome'] . "</h6>";
                     $check = true;
                     break;
                 }
             }   
             if($check == false){
                 header("Location: ./index.php"); //redireziona l'utente verso la pagina index.php
+                exit;
             }
         ?>
         </div>
-        <h3 class="text-center">Cosa vorresti fare?</h3>
+        <h2 class="text-danger text-center">Cosa vorresti fare?</h2>
         <div class="container text-center">
             <div class="row">
                 <div class="col">
