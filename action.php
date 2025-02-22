@@ -22,7 +22,7 @@
     <title>Menù Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
-  <body>   
+  <body  class="bg-dark  text-white">   
         <div class="w-50 mx-auto my-auto text-center">
         <?php
             include("connessione.php");
@@ -81,7 +81,7 @@
                             <label for="insertIdorchestra" class="form-label">ID Orchestra</label>
                             <input type="text" class="form-control" name="insertIdorchestra" id="insertIdorchestra">
                         </div>
-                        <button type="submit" class="btn btn-primary">Aggiungi</button>
+                        <button type="submit" class="btn btn-success">Aggiungi</button>
                         </form>
                 </div>
                 <div class="col">
@@ -91,32 +91,33 @@
                         <label for="exampleInputEmail1" class="form-label">ID Concerto</label>
                         <input type="text" class="form-control" id="rmConcerto"name="rmConcerto">
                     </div>
-                    <button type="submit" class="btn btn-primary">Elimina</button>
+                    <button type="submit" class="btn btn-danger">Elimina</button>
                     </form>
                 </div>
             </div>
         </div>
         <br>
-            <div class="w-50 mx-auto my-auto text-center mt-5">
+            <div class="w-50 mx-auto my-auto text-center mt-5 rounded-2">
                     <h2 class="text-danger">Elenco di tutti i concerti con le relaitive informazioni</h2>
                     <hr>
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-hover rounded-2 table-success">
                     <tr>
-                        <th>Titolo:</th>
-                        <th>Data:</th>
-                        <th>ID concerto:</th>
+                        <th>TITOLO:</th>
+                        <th>DATA:</th>
+                        <th>ID CONCERTO:</th>
                     </tr>
                     <?php
                         $query2 = mysqli_query($conn, "SELECT concerto.Titolo, concerto.Data, concerto.ID_Concerto FROM concerto");
                         while($row = mysqli_fetch_assoc($query2)){
-                            echo"<tr>";
-                            echo"<td>" . $row['Titolo'] ."</td>";
+                            echo'<tr>';
+                            echo'<td class="table-active">' . $row['Titolo'] ."</td>";
                             echo"<td>" . $row['Data'] ."</td>";
                             echo"<td>" . $row['ID_Concerto'] ."</td>";
                             echo"</tr>";
                         }
                     ?>
                     </table>
+                    <button type="button" class="btn btn-light"><a class="link-dark" href="./index.php">Logout</a></button>
             </div>
         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
