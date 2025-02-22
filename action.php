@@ -50,7 +50,38 @@
                 exit;
             }
         ?>
-        </div>
+        </div>        
+        <h2 class="text-danger text-center">Tutti i tuoi appuntamenti:</h2>
+        <DIV class="w-75 mx-auto my-auto text-center">
+        <table class="table table-bordered table-hover table-warning">
+            <tr>
+                <th>ID CONCERTO:</th>
+                <th>TITOLO:</th>
+                <th>DATA:</th>
+                <th>DESCRIZIONE:</th>
+                <th>LUOGO:</th>
+                <th>ORCHESTRA:</th>
+            </tr>
+        <?php
+            $query = mysqli_query($conn,"SELECT concerto.ID_concerto, concerto.titolo, sala.nome,concerto.data,concerto.descrizione,orchestra.nome as nOrchestra FROM concerto
+            join orchestra on orchestra.ID_Orchestra = concerto.ID_Orchestra
+            join direttore on direttore.ID_Direttore = orchestra.ID_Direttore
+            join sala on sala.ID_Sala = concerto.ID_Sala
+            where direttore.ID_Direttore = '$idAdmin'");
+
+            while($row=mysqli_fetch_assoc($query)){
+                echo '<tr>';
+                echo '<td>' . $row['ID_concerto']. '</td>';
+                echo '<td>' . $row['titolo']. '</td>';
+                echo '<td>' . $row['data']. '</td>';
+                echo '<td>' . $row['descrizione']. '</td>';
+                echo '<td>' . $row['nome']. '</td>';
+                echo '<td>' . $row['nOrchestra']. '</td>';
+                echo '</tr>';
+            }
+        ?>
+        </DIV>
+        </table>
         <h2 class="text-danger text-center">Cosa vorresti fare?</h2>
         <div class="container text-center">
             <div class="row">

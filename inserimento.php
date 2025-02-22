@@ -21,7 +21,7 @@
         $query = mysqli_query($conn, "INSERT INTO concerto (ID_Concerto,Titolo, Descrizione, `Data`, ID_Sala, ID_Orchestra) 
         VALUES ('$idConcerto','$titolo', '$descrizione', '$giorno', '$sala', '$idOrchestra')");
         header("Location: ./action.php");
-      exit;
+        exit;
 
 
     ?>
