@@ -34,12 +34,12 @@
             
         // echo $userName;
         // echo $idAdmin;
-        $check = false;
+            $check = false;
             $query = mysqli_query($conn, "SELECT direttore.Nome, direttore.ID_Direttore,direttore.Cognome FROM direttore");
             while($row = mysqli_fetch_assoc($query)){
                 //echo $row['Nome'];
-                if($row['Nome']==$userName && $row['ID_Direttore']==$idAdmin && $row['Cognome']==$cognomeAdmin){
-                    echo "<br>";
+                if($row['Nome']==$userName && $row['ID_Direttore']==$idAdmin && $row['Cognome']==$cognomeAdmin){ //controllo se è registrato come Admin
+                    echo "<br>"; 
                     echo "<h6>Bentornato/a " . $row['Nome'] . "</h6>";
                     $check = true;
                     break;

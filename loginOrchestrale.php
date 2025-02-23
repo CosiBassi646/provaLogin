@@ -3,7 +3,6 @@
   session_destroy();
   session_start();
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,26 +16,26 @@
   <hr>
     <div class="w-50 mx-auto my-auto">
         <!--nome!-->
-        <form action="./action.php" method="GET">
+        <form action="./action2.php" method="GET">
             <div class="mb-3">
-                <label for="emailUser" class="form-label">Nome direttore</label>
-                <input type="text" class="form-control" name="emailUser" id="emailUser" aria-describedby="emailHelp">
+                <label for="emailUser" class="form-label">Nome:</label>
+                <input type="text" class="form-control" name="nome" id="nome" aria-describedby="emailHelp">
             </div>
             <!--cognome!-->
             <div class="mb-3">
-                <label for="emailUser" class="form-label">Cognome direttore</label>
-                <input type="text" class="form-control" name="cognomeAdmin" id="cognomeAdmin" aria-describedby="emailHelp">
+                <label for="emailUser" class="form-label">Cognome:</label>
+                <input type="text" class="form-control" name="cognome" id="cognome" aria-describedby="emailHelp">
             </div>
             <!--id!-->
             <div class="mb-3">
-                <label for="passwd" class="form-label">ID Direttore</label>
-                <input type="password" class="form-control" name='passwd' id="passwd">
+                <label for="passwd" class="form-label">ID:</label>
+                <input type="password" class="form-control" name='id' id="id">
             </div>
             <button type="submit" class="btn btn-success">Login</button>
         </form>
         <br>
         <div class="text-center">
-          <button type="button" class="btn btn-light "><a class="link-dark" href="./loginOrchestrale.php">Login come Orchestrale</a></button>
+          <button type="button" class="btn btn-light "><a class="link-dark" href="./index.php">Login come Direttore</a></button>
         </div>
        
     </div>
